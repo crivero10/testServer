@@ -19,8 +19,7 @@ public func routes(_ router: Router) throws {
     router.post("todos", use: todoController.create)
     router.delete("todos", Todo.parameter, use: todoController.delete)
     
-    let reviewController = ReviewController()
-    router.get("reviews", "popular", use: reviewController.indexPopular)
+    let reviewController = UserController()
     router.get("reviews", use: reviewController.index)
     router.post("reviews", use: reviewController.create)
     router.delete("reviews", use: reviewController.delete)

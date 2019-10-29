@@ -9,29 +9,25 @@ import Foundation
 import Vapor
 import FluentMySQL
 
-final class Review: MySQLModel{
+final class User: MySQLModel{
     var id: Int?
     var username: String
-    var text: String
-    var movie_id: String
-    var score: Int
-
+    var password: String
+    
     /// Creates a new `Todo`.
-    init(id: Int? = nil, username: String, text: String, movie_id: String, score: Int) {
+    init(id: Int? = nil, username: String, password: String) {
         self.id = id
         self.username = username
-        self.text = text
-        self.movie_id = movie_id
-        self.score = score
+        self.password = password
     }
 }
 
 
-extension Review: Migration { }
+extension User: Migration { }
 
 /// Allows `Todo` to be encoded to and decoded from HTTP messages.
-extension Review: Content { }
+extension User: Content { }
 
 /// Allows `Todo` to be used as a dynamic parameter in route definitions.
-extension Review: Parameter { }
+extension User: Parameter { }
 
