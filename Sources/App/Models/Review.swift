@@ -14,13 +14,15 @@ final class Review: MySQLModel{
     var username: String
     var text: String
     var movie_id: String
+    var score: Int
 
     /// Creates a new `Todo`.
-    init(id: Int? = nil, username: String, text: String, movie_id: String) {
+    init(id: Int? = nil, username: String, text: String, movie_id: String, score: Int) {
         self.id = id
         self.username = username
         self.text = text
         self.movie_id = movie_id
+        self.score = score
     }
 }
 
